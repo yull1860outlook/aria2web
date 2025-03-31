@@ -207,14 +207,14 @@
           method: this.namespace ? this.namespace +'.'+ method : method,
           id: id
         }
-	//inject auth token when not null
-	var TokenParams = ["token:Passw0rd"];
+        //inject auth token when not null
+        var TokenParams = ["token:Passw0rd"];
 
         if(typeof(params) !== 'undefined') {
-	  TokenParams.concat(params);
+          TokenParams = TokenParams.concat(params);
           //dataObj.params = params;
         }
-	dataObj.params = TokenParams;
+	      dataObj.params = TokenParams;
 
         return dataObj;
       },

@@ -382,6 +382,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
       if (keys) params.push(keys);
       ARIA2.request("tellWaiting", params,
         function(result) {
+          console.debug(result);
           if (select_lock) return;
           if (!result.result) {
             main_alert("alert-error", "<strong>Error: </strong>rpc result error.", 5000);
@@ -406,7 +407,7 @@ if (typeof ARIA2=="undefined"||!ARIA2) var ARIA2=(function(){
       if (keys) params.push(keys);
       ARIA2.request("tellStopped", params,
         function(result) {
-          //console.debug(result);
+          console.debug(result);
 
           if (!result.result) {
             main_alert("alert-error", "<strong>Error: </strong>rpc result error.", 5000);
